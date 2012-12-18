@@ -167,8 +167,8 @@ downloading and uploading of images associated with the tags, then the app shoul
 the user himself cancelled by pressing the back button. This problem did not occur if the user decided to allow the app
 to download and upload images.
 
-Another change made was that, the app does not download and upload the images by default. The user can enable this feature 
-in the Settings Page.
+Another change made was that, the app downloaded and uploaded the images by default. I had disabled this feature by default.
+The user can enable this feature in the Settings Page.
 
 Some changes have been made to the server code as well to reflect the change and backward compatibility has been provided to
 allow the apps of older version to function properly.
