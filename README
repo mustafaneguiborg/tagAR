@@ -160,7 +160,7 @@ Lastly, we have developed a new Menu Screen, with graphical icons instead of the
 us and we have used ImageView to place them in.
 
 
-Changes From Version 2.0 to Version 2.0
+Changes From Version 2.0 to Version 2.1
 
 A major bug was discovered and fixed in this version of the app. The bug was that if the user decided not to allow the
 downloading and uploading of images associated with the tags, then the app should the please wait modal indefinitely until
