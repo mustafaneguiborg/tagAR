@@ -31,7 +31,7 @@
  * @company: MN Tech Solutions
  * @applicationName: tagAR
  * @appType: This app is an augmented reality app which allows the user to tag locations
- * @version: 2.1 
+ * @version: 3.0 
  * @description: This activity is the core feature of this application. This is where the tags are shown,
  * and new tags are made.
  */
@@ -916,8 +916,8 @@ public class Screen6 extends Activity implements SensorEventListener,OnTouchList
 		//xRel=xTouch/height;
 		
 		
-		Toast.makeText(this, "x: "+((Float)(xTouch)).toString()+" y: "+((Float)(yTouch)).toString(),1000).show();
-		Toast.makeText(this, "height: "+((Integer)(height)).toString()+" width: "+((Integer)(width)).toString(),1000).show();
+		//Toast.makeText(this, "x: "+((Float)(xTouch)).toString()+" y: "+((Float)(yTouch)).toString(),1000).show();
+		//Toast.makeText(this, "height: "+((Integer)(height)).toString()+" width: "+((Integer)(width)).toString(),1000).show();
 		
 		float x1=0.0f, diff=0.0f;
 		

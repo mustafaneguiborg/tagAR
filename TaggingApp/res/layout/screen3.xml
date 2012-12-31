@@ -124,6 +124,14 @@
     	    
     </LinearLayout>
     
+ 	 	<!-- Addition in Version 3.0
+ 	    	I have added a new LinearLayout so that i can add
+ 	    	the Or Image (text) and the facebook login button.
+ 	    	If the user touches the Login Button then he will go through the 
+ 	    	authentication process of Facebook. 
+ 	    
+ 	     -->
+ 	 	
  	 	<LinearLayout
  	    android:layout_width="wrap_content"
  	    android:layout_height="wrap_content"
@@ -146,8 +154,6 @@
     	    android:src="@drawable/login"
     	    />
     	
-    	
-    	    
     </LinearLayout>
     
  	 	

@@ -33,7 +33,7 @@
  * @company: MN Tech Solutions
  * @applicationName: tagAR
  * @appType: This app is an augmented reality app which allows the user to tag locations
- * @version: 2.1  
+ * @version: 3.0  
  * @description: This activity shows the users if any email addresses are in the local storage of the phone. This feature is a new
  * addition in version 1.0 and is meant to provide ease of use when logging into the app. If no details exist then the user is directly 
  * taken to the login form, else the user can select form the list of emails saved, and the data is automatically added to the login form.
@@ -56,13 +56,21 @@ import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.facebook.android.AsyncFacebookRunner;
+import com.facebook.android.DialogError;
+import com.facebook.android.Facebook;
+import com.facebook.android.Facebook.DialogListener;
+import com.facebook.android.FacebookError;
 import com.tagAR.R;
 
 import data.UserAccounts;
+import facebookConnector.FacebookConnector;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
@@ -78,6 +86,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.AdapterContextMenuInfo;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -88,12 +97,41 @@ public class Screen11 extends Activity implements OnClickListener, OnLongClickLi
 	private ArrayList<String> list;
 	private AdapterContextMenuInfo lastMenuInfo = null;
 	private TextView addUserAccounts;
+	/**
+	 * Addition in Version 3.0
+	 * I have added new login via facebook button
+	 * Now users will be able to login via their facebook accounts
+	 * and be able to use new features just for the facebook users.
+	 * 
+	 */
+	
+	private String facebookAPIKey;
+	private FacebookConnector facebook=new FacebookConnector();
+    private AsyncFacebookRunner mAsyncRunner;
+	String facebookAccessToken;
+	private ImageView facebookLogin;
+	private Context context;
 	
 	@SuppressWarnings("unchecked")
 	
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+              
         
+        //context=getApplicationContext();
+        /**
+         * Changed in Version 3.0
+         * I have changed the statement context=getApplicationContext(); to 
+         * context=this;
+         * There is a difference between the this and getApplicationContext.
+         * The this keyword is used for the current activity while the getApplicationContext
+         * is used for the whole application.
+         * source: http://stackoverflow.com/questions/10641144/difference-between-getcontext-getapplicationcontext-getbasecontext-g
+         * Understanding this means that Facebook requires the context of the current Activity where the function
+         * authorize is being called. 
+         */
+        
+        context=this;
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
         WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -103,11 +141,14 @@ public class Screen11 extends Activity implements OnClickListener, OnLongClickLi
         addUserAccounts=(TextView)findViewById(R.id.addUserAccounts);
         addUserAccounts.setOnClickListener(this);
         
+        facebookLogin=(ImageView)findViewById(R.id.facebookLogin);
+        facebookLogin.setOnClickListener(this);
+        
         try
 		{
         	
         	/**
-        	 * addition in version 1.0
+        	 *Addition in version 1.0
         	 *check if the internal file exists. this file is to contain the list of user accounts that have
         	 *been signed in to the app. I am keeping a list so that that i can show it to the user so that his
         	 *sign in (login) process is as smooth and easy as possible. Once the user enters the login details
@@ -197,7 +238,7 @@ public class Screen11 extends Activity implements OnClickListener, OnLongClickLi
 	public int getLengthOfDataInBytes(String fileName)
 	{
 		/**
-		 * addition in version 1.0
+		 * Addition in version 1.0
 		 * this function gets the integer of the value stored in the file. this particular function
 		 * is being used to get the value of length in bytes of the data stored in some other file.
 		 * 
@@ -246,6 +287,38 @@ public class Screen11 extends Activity implements OnClickListener, OnLongClickLi
 			
 			
 		}//end if
+		else if(R.id.facebookLogin==id)
+		{
+			/**
+			 * Addition in Version 3.0
+			 * This condition activates the
+			 * Facebook authentication code.
+			 * I am checking if the Internet connection is on.
+			 */
+			
+			   
+	        ConnectivityManager connectivityManager =  (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+	        NetworkInfo networkStatus= connectivityManager.getActiveNetworkInfo();
+	        ArrayList<String> userData=new ArrayList<String>();
+	        
+	        if(networkStatus!=null)
+	        {
+	        	facebook.login(context);
+	        	
+				
+	        }//end if
+	        else
+	        {
+	        	
+
+	        	Toast.makeText(this, "No Internet connection detected. Please enable your internet connection.", 1000).show();
+	       	 	startActivityForResult(new Intent(android.provider.Settings.ACTION_WIRELESS_SETTINGS), 0);//open up the systems screen which allows me to set the internet settings
+	        
+	        	
+	        }//end else
+			
+			
+		}//end else if
 		else
 		{
 		
@@ -331,5 +404,17 @@ public class Screen11 extends Activity implements OnClickListener, OnLongClickLi
 	}
 
 	
+	/**
+	 * Addition in Version 3.0
+	 * 
+	 * This is part of the Facebook authentication code
+	 */
+	
+	 @Override
+	    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+	        super.onActivityResult(requestCode, resultCode, data);
 
+	        facebook.authorizeCallback(requestCode, resultCode, data);
+	    }
+	 
 }

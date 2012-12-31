@@ -33,7 +33,7 @@
  * @company: MN Tech Solutions
  * @applicationName: tagAR
  * @appType: This app is an augmented reality app which allows the user to tag locations
- * @version: 2.1
+ * @version: 3.0
  * @description: This activity allows the user to login into the app. Upon submission of the form the internet connection is 
  * checked if it is enabled. If not then the user is shown the settings screen to enable the internet connection.
  * Then the app is connected to the server where the user's login details are checked.
@@ -99,6 +99,7 @@ public class Screen3 extends Activity implements OnClickListener{
 	private EditText email;
 	private EditText password;
 	private Button login;
+	
 	/**
 	 * Addition in Version 3.0
 	 * I have added new login via facebook button
@@ -343,9 +344,15 @@ public class Screen3 extends Activity implements OnClickListener{
 						             pos=pos+3;
 						             String sub="";
 	
-						             
-						             if(numOfTerms==1)
-						             {
+						             /**
+						              * 
+						              * Change in Version 3.0 
+						              * I have changed the conditions to yoda convention in the numOfTerms conditions
+						              * For some reason i used the variable relational operator value in this.
+						              * Now the conditions are value relational operator variable
+						              */
+						             if(1==numOfTerms)
+						             {//the user has not logged in successfully
 						            	 	pos1=decodedString.indexOf("]", pos);
 							            	sub=decodedString.substring(pos, pos1);
 							            	
@@ -397,8 +404,8 @@ public class Screen3 extends Activity implements OnClickListener{
 							            	}//end catch
 						            	 
 						             }//end if
-						             else if(numOfTerms==4)
-						             {
+						             else if(4==numOfTerms)
+						             {//the user has logged in successfully
 	
 						            	 pos1=decodedString.indexOf("]", pos);
 						            	 sub=decodedString.substring(pos, pos1);

@@ -32,7 +32,7 @@
  * @company: MN Tech Solutions
  * @applicationName: tagAR
  * @appType: This app is an augmented reality app which allows the user to tag locations
- * @version: 2.1
+ * @version: 3.0
  * @description: This activity allows the user to enter registration information. Upon submission of the form the app checks if the
  * internet connection is enabled and if not, then the user is shown the settings screen to enable the net.
  *   

@@ -32,7 +32,7 @@
  * @company: MN Tech Solutions
  * @applicationName: tagAR
  * @appType: This app is an augmented reality app which allows the user to tag locations
- * @version: 2.1
+ * @version: 3.0
  * @description: This activity is the forgot password feature, where if the user has forgotten his password, can enter 
  * the email address with which he registered an account on tagAR and we will generate a new password and email it to him.
  *  

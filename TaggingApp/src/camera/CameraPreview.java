@@ -32,7 +32,7 @@
  * @company: MN Tech Solutions
  * @applicationName: tagAR
  * @appType: This app is an augmented reality app which allows the user to tag locations
- * @version: 2.1
+ * @version: 3.0
  * @description: This class provides us with a camera view so that we can see the tags overlayed over the world. 
  * @originalSource: android developer website 
  */

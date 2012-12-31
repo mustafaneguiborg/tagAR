@@ -30,7 +30,12 @@
 	<string name="close">Close</string>
 	<string name="location">Location:</string>
 	<string name="distance">Distance:</string>
-	<string name="appVersion">Version: 2.1</string>
+	<!-- Change in Version 3.0
+	
+		I have changed the Version to 3.0
+	
+	 -->
+	<string name="appVersion">Version: 3.0</string>
 	<string name="loginLink"><u>Already have an account? Login now!!!</u></string>
 	<string name="forgotPasswordLink"><u>Forgotten your password? Reset it!!!</u></string>
 	<string name="forgotPassword">Reset Password</string>
@@ -54,8 +59,6 @@
 	<string name="latestNews">Latest News</string>
 	<string name="latestNews1">None at the moment.</string>
 	<string name="showTips">Show textual tips?</string>
-	
-	
 	
 	
 </resources>	

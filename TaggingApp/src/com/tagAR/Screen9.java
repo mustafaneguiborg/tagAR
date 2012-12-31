@@ -32,7 +32,7 @@
  * @company: MN Tech Solutions
  * @applicationName: tagAR
  * @appType: This app is an augmented reality app which allows the user to tag locations
- * @version: 2.1 
+ * @version: 3.0 
  * @description: This activity is the settings page where the user can manage a number of app settings and reset his password by giving in input his present password and 
  * the new password. We are asking for the present password so that only the user to whom the account belongs to
  * and knows the current password can change the password. 

@@ -33,7 +33,7 @@
  * @company: MN Tech Solutions
  * @applicationName: tarAR
  * @appType: This app is an augmented reality app which allows the user to tag locations
- * @version: 2.1  
+ * @version: 3.0  
  * @description: This activity is basically a splash screen. All it does is show a logo for a few seconds and then 
  * starts the next activity.
  */

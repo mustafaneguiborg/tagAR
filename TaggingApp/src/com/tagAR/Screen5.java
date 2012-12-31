@@ -32,7 +32,7 @@
  * @company: MN Tech Solutions
  * @applicationName: tagAR
  * @appType: This app is an augmented reality app which allows the user to tag locations
- * @version: 2.1
+ * @version: 3.0
  * @description: This activity is the main menu. The options that the user can perform are shown in this menu.
  * 
  */
@@ -40,6 +40,8 @@
 package com.tagAR;
 
 
+import java.io.ByteArrayInputStream;
+import java.io.ObjectInputStream;
 import java.util.ArrayList;
 
 import provider.*;
@@ -60,6 +62,8 @@ import android.widget.Toast;
 
 import com.tagAR.R;
 
+import facebookConnector.FacebookConnector;
+
 
 public class Screen5 extends Activity implements OnClickListener {
 
@@ -77,7 +81,7 @@ public class Screen5 extends Activity implements OnClickListener {
 	private static Double longitude=0.0;
 	
     private static ArrayList<String>userData;
-	
+	private FacebookConnector facebook;
 	
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -105,7 +109,17 @@ public class Screen5 extends Activity implements OnClickListener {
         userData=bundle.getStringArrayList("userData");
 		locationProvider=new Provider();
 		
-
+		/**
+		 * Addition in Version 3.0
+		 * I am getting the facebook access token sent in by the
+		 * activity from which the user logs in. I need this
+		 * access token to retrieve the facebook session.
+		 */
+		
+		String accessToken=bundle.getString("accessToken");
+		facebook=new FacebookConnector();
+		facebook.setAccessToken(accessToken);
+			      
                 
     }
 

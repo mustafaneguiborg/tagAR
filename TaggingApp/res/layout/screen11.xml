@@ -63,13 +63,45 @@
 	        android:textScaleX="1"
 	        />
  	    
- 	    <TextView 
- 	        android:id="@+id/addUserAccounts"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:text="@string/addANewUserAccount"
-	        
-	        />
+ 	    <!-- Addition in Version 3.0
+ 	    	I have added a new LinearLayout so that i can add
+ 	    	the Or Image (text) and the facebook login button.
+ 	    	If the user touches the Login Button then he will go through the 
+ 	    	authentication process of Facebook. 
+ 	    
+ 	     -->
+ 	    
+ 	    <LinearLayout android:layout_width="wrap_content"
+ 	        android:layout_height="wrap_content"
+ 	        android:orientation="horizontal"
+ 	        >
+	 	    <TextView 
+	 	        android:id="@+id/addUserAccounts"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/addANewUserAccount"
+		        
+		        />
+	 	   
+	    	
+	    	 <ImageView 
+	    	    android:id="@+id/or"
+	    	    android:layout_width="fill_parent"
+	    	    android:layout_height="wrap_content"
+	    	    android:paddingLeft="10dp"
+	    	    android:src="@drawable/or"
+	    	    />
+	    	 
+	    	
+	    	<ImageView 
+	    	    android:id="@+id/facebookLogin"
+	    	    android:layout_width="fill_parent"
+	    	    android:layout_height="wrap_content"
+	    	    android:src="@drawable/login"
+	    	    />
+	    	 
+ 	    
+ 	    	</LinearLayout>
  	    
  	       <TextView 
 	        android:layout_width="wrap_content"

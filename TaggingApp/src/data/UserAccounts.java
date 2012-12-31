@@ -31,7 +31,7 @@
  * @company: MN Tech Solutions
  * @applicationName: tagAR
  * @appType: This app is an augmented reality app which allows the user to tag locations
- * @version: 2.1 
+ * @version: 3.0 
  * @description: This class is the placeholder for the tags that are shown to the user.
  */
 

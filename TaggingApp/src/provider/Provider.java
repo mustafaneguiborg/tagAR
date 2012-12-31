@@ -30,7 +30,7 @@
  * @company: MN Tech Solutions
  * @applicationName: tagAR
  * @appType: This app is an augmented reality app which allows the user to tag locations
- * @version: 2.1
+ * @version: 3.0
  * @description: This class provides with the functionality for setting up a GPS Provider or Network Provider and then use it.
  * @originalSource: http://devdiscoveries.wordpress.com/2010/02/04/android-use-location-services/
  * 
