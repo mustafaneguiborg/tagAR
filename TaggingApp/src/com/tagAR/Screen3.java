@@ -78,6 +78,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -98,6 +99,14 @@ public class Screen3 extends Activity implements OnClickListener{
 	private EditText email;
 	private EditText password;
 	private Button login;
+	/**
+	 * Addition in Version 3.0
+	 * I have added new login via facebook button
+	 * Now users will be able to login via their facebook accounts
+	 * and be able to use new features just for the facebook users.
+	 * 
+	 */
+	private ImageView facebookLogin;
 	private static Context context;
 	private static String emailText;
 	private static String passwordText;
@@ -125,6 +134,8 @@ public class Screen3 extends Activity implements OnClickListener{
         password=(EditText)findViewById(R.id.passwordLogin);
         login=(Button)findViewById(R.id.loginButton);
         login.setOnClickListener(this);
+        facebookLogin=(ImageView)findViewById(R.id.facebookLogin);
+        facebookLogin.setOnClickListener(this);
               
         forgotPass=(TextView)findViewById(R.id.forgotPasswordLink);
         forgotPass.setOnClickListener(this);
@@ -188,7 +199,7 @@ public class Screen3 extends Activity implements OnClickListener{
 		      }
 	
 
-	@Override
+	
 	public void onClick(View view) {
 		
 		int viewId=view.getId();
@@ -287,7 +298,7 @@ public class Screen3 extends Activity implements OnClickListener{
 						             String decodedString;
 						             StringBuffer stringComplete=new StringBuffer();
 						             
-						             URL url = new URL("http://worldofpakistan.net/tagar/authenticate2_1.php");
+						             URL url = new URL("http://worldofpakistan.net/tagar/authenticate3_0.php");
 						             URLConnection connection = url.openConnection();
 						             connection.setDoOutput(true);
 						            

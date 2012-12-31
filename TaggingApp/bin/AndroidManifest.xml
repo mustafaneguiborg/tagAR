@@ -11,7 +11,11 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    
+    <!-- Addition in Version 3.0
+    I have added the supports-screens tag because without this tag drawables from mdpi were being selected
+    despite of devices of different densities being used
+    -->
+    <supports-screens android:smallScreens="true" android:normalScreens="true" android:largeScreens="true" android:anyDensity="true" />
     
 
     <application

@@ -78,7 +78,7 @@ public class Screen5 extends Activity implements OnClickListener {
 	
     private static ArrayList<String>userData;
 	
-	@Override
+	
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
@@ -111,7 +111,7 @@ public class Screen5 extends Activity implements OnClickListener {
 
 	
 
-	@Override
+	
 	protected void onPause() {
 		super.onPause();
 		
@@ -126,7 +126,7 @@ public class Screen5 extends Activity implements OnClickListener {
 
 
 
-	@Override
+	
 	public void onClick(View view) {
 		
 		int viewId=view.getId();

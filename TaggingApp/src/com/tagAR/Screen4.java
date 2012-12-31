@@ -119,7 +119,7 @@ public class Screen4 extends Activity implements OnClickListener {
 
 	
 	
-	@Override
+	
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
@@ -174,7 +174,7 @@ public class Screen4 extends Activity implements OnClickListener {
 		      }
 	  
 	
-	@Override
+	
 	public void onClick(View view) {
 		
 		int viewId=view.getId();
@@ -267,7 +267,7 @@ public class Screen4 extends Activity implements OnClickListener {
 						             String decodedString;
 						             StringBuffer stringComplete=new StringBuffer();
 						             
-						             URL url = new URL("http://worldofpakistan.net/tagar/register2_1.php");
+						             URL url = new URL("http://worldofpakistan.net/tagar/register3_0.php");
 						             URLConnection connection = url.openConnection();
 						             connection.setDoOutput(true);
 						            

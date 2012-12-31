@@ -90,7 +90,7 @@ public class Screen11 extends Activity implements OnClickListener, OnLongClickLi
 	private TextView addUserAccounts;
 	
 	@SuppressWarnings("unchecked")
-	@Override
+	
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
@@ -228,7 +228,7 @@ public class Screen11 extends Activity implements OnClickListener, OnLongClickLi
 		
 	}
 
-	@Override
+	
 	public void onClick(View view) {
 
 		
@@ -270,7 +270,7 @@ public class Screen11 extends Activity implements OnClickListener, OnLongClickLi
           
 	}
 
-	@Override
+	
 	public boolean onLongClick(View view) {
 		
 		int id=view.getId();

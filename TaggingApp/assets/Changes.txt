@@ -1,15 +1,10 @@
-Current Version 2.1
-Changes Since Version 2.0
+Current Version 3.0
+Changes Since Version 2.1
 
-A major bug was discovered and fixed in this version of the app. The bug was that if the user decided not to allow the
-downloading and uploading of images associated with the tags, then the app should the please wait modal indefinitely until
-the user himself cancelled by pressing the back button. This problem did not occur if the user decided to allow the app
-to download and upload images.
+This new version boasts new features such as facebook connectivity. Users now will be able to login (and automatically register
+) into the app via their facebook account. Furthermore they will be able to use new features which will be only be available
+for them. User will also be able to login via the old native method, but they will not be able to use the facebook features.
+However they will be able to link their facebook account to the tagAR account. 
 
-Another change made was that, the app does not download and upload the images by default. The user can enable this feature 
-in the Settings Page.
-
-Some changes have been made to the server code as well to reflect the change and backward compatibility has been provided to
-allow the apps of older version to function properly.
-
-
+I also have made a change in the server code where a security risk was discovered. We have patched up that risk now and Version 3.0
+will use this new code.

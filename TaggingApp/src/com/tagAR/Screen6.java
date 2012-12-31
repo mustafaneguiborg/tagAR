@@ -232,7 +232,7 @@ public class Screen6 extends Activity implements SensorEventListener,OnTouchList
 	/**********onCreate function**********/
 
 	/** Called when the activity is first created. */
-	@Override
+	
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE); 
@@ -467,7 +467,7 @@ public class Screen6 extends Activity implements SensorEventListener,OnTouchList
 				             String decodedString;
 				             StringBuffer stringComplete=new StringBuffer();
 				             
-				             URL url = new URL("http://worldofpakistan.net/tagar/getnearesttags2_1.php");
+				             URL url = new URL("http://worldofpakistan.net/tagar/getnearesttags3_0.php");
 				             URLConnection connection = url.openConnection();
 				             connection.setDoOutput(true);
 				            
@@ -807,7 +807,7 @@ public class Screen6 extends Activity implements SensorEventListener,OnTouchList
 
 	
 	/**********onPause function**********/
-	@Override
+	
 	protected void onPause() {
 		super.onPause();
 		
@@ -846,13 +846,13 @@ public class Screen6 extends Activity implements SensorEventListener,OnTouchList
 	
 	
 
-	@Override
+	
 	public void onAccuracyChanged(Sensor sensor, int arg1) {
 		
 		
 	}
 
-	@Override
+	
 	public void onSensorChanged(SensorEvent event) {
 		
 
@@ -888,7 +888,7 @@ public class Screen6 extends Activity implements SensorEventListener,OnTouchList
 		
 	}
 
-	@Override
+	
 	public boolean onTouch(View view, MotionEvent event) {
 
 		/**
@@ -916,8 +916,8 @@ public class Screen6 extends Activity implements SensorEventListener,OnTouchList
 		//xRel=xTouch/height;
 		
 		
-		//Toast.makeText(this, "x: "+((Float)(xTouch)).toString()+" y: "+((Float)(yTouch)).toString(),1000).show();
-		//Toast.makeText(this, "height: "+((Integer)(height)).toString()+" width: "+((Integer)(width)).toString(),1000).show();
+		Toast.makeText(this, "x: "+((Float)(xTouch)).toString()+" y: "+((Float)(yTouch)).toString(),1000).show();
+		Toast.makeText(this, "height: "+((Integer)(height)).toString()+" width: "+((Integer)(width)).toString(),1000).show();
 		
 		float x1=0.0f, diff=0.0f;
 		
@@ -1020,7 +1020,7 @@ public class Screen6 extends Activity implements SensorEventListener,OnTouchList
 
 	
 	
-	@Override
+	
 	public void onClick(View view) {
 		
 		int id=view.getId();
@@ -1169,7 +1169,7 @@ public class Screen6 extends Activity implements SensorEventListener,OnTouchList
 									 String data;
 						             StringBuffer stringComplete=new StringBuffer();
 						             
-						             URL url = new URL("http://worldofpakistan.net/tagar/posttag2_1.php");
+						             URL url = new URL("http://worldofpakistan.net/tagar/posttag3_0.php");
 						             URLConnection connection = url.openConnection();
 						             connection.setDoOutput(true);
 						            
@@ -1229,7 +1229,7 @@ public class Screen6 extends Activity implements SensorEventListener,OnTouchList
 	 				             String decodedString;
 	 				             StringBuffer stringComplete=new StringBuffer();
 	 				             
-	 				             URL url = new URL("http://worldofpakistan.net/tagar/getnearesttags2_1.php");
+	 				             URL url = new URL("http://worldofpakistan.net/tagar/getnearesttags3_0.php");
 	 				             URLConnection connection = url.openConnection();
 	 				             connection.setDoOutput(true);
 	 				            
@@ -1808,7 +1808,7 @@ public class Screen6 extends Activity implements SensorEventListener,OnTouchList
 				             String decodedString;
 				             StringBuffer stringComplete=new StringBuffer();
 				             
-				             URL url = new URL("http://worldofpakistan.net/tagar/getnearesttags2_1.php");
+				             URL url = new URL("http://worldofpakistan.net/tagar/getnearesttags3_0.php");
 				             URLConnection connection = url.openConnection();
 				             connection.setDoOutput(true);
 				            
@@ -2149,7 +2149,7 @@ public class Screen6 extends Activity implements SensorEventListener,OnTouchList
 		
 		 ShutterCallback myShutterCallback = new ShutterCallback(){
 
-			 @Override
+			 
 			 public void onShutter() {
 			  // TODO Auto-generated method stub
 			 
@@ -2157,7 +2157,7 @@ public class Screen6 extends Activity implements SensorEventListener,OnTouchList
 
 			PictureCallback myPictureCallback_RAW = new PictureCallback(){
 
-			 @Override
+			 
 			 public void onPictureTaken(byte[] arg0, Camera arg1) {
 			  // TODO Auto-generated method stub
 			 
@@ -2165,7 +2165,7 @@ public class Screen6 extends Activity implements SensorEventListener,OnTouchList
 
 			PictureCallback myPictureCallback_JPG = new PictureCallback(){
 
-			 @Override
+			 
 			 public void onPictureTaken(byte[] data, Camera arg1) {
 
 			  
@@ -2238,7 +2238,7 @@ public class Screen6 extends Activity implements SensorEventListener,OnTouchList
 
 	    	
 
-	    	@Override
+	    	
 	    	protected void onDraw(Canvas canvas) {
 	    		super.onDraw(canvas);
 	    		
@@ -2321,7 +2321,7 @@ public class Screen6 extends Activity implements SensorEventListener,OnTouchList
 
 
 
-			@Override
+			
 			protected void onSizeChanged(int w, int h, int oldw, int oldh) {
 				super.onSizeChanged(w, h, oldw, oldh);
 				
