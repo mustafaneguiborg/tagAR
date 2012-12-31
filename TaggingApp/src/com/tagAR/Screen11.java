@@ -336,6 +336,15 @@ public class Screen11 extends Activity implements OnClickListener, OnLongClickLi
             intent.putStringArrayListExtra("userAccounts",list);
 	        intent.putExtra("email",email);
 	        intent.putExtra("password", password);
+	        
+	        /**
+	         * Addition in Version 3.0
+	         * I am aving a flag which will tell whether the 
+	         * user has logged in via facebook or not. 
+	         *
+	         */
+	        
+	        intent.putExtra("facebookLogin",false);
 			startActivity(intent);
 	        finish();
         

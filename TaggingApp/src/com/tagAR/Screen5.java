@@ -71,6 +71,7 @@ public class Screen5 extends Activity implements OnClickListener {
 	private ImageView about;
 	private ImageView settings;
 	private ImageView exit;
+	private ImageView fbLogout;
 	
 	private static Provider locationProvider;
 	private static ProgressDialog dialog;
@@ -82,6 +83,16 @@ public class Screen5 extends Activity implements OnClickListener {
 	
     private static ArrayList<String>userData;
 	private FacebookConnector facebook;
+	
+	/**
+	 * 
+	 * Addition in Version 3.0
+	 * This will keep track if the user has logged in via facebook or not
+	 * for the current activity.
+	 * 
+	 */
+	
+	private Boolean facebookLogin;
 	
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -97,12 +108,13 @@ public class Screen5 extends Activity implements OnClickListener {
         about=(ImageView)findViewById(R.id.about);
         settings=(ImageView)findViewById(R.id.settings);
         exit=(ImageView)findViewById(R.id.exit);
-        
+        fbLogout=(ImageView)findViewById(R.id.fbLogout);
         
         tagLocation.setOnClickListener(this); 
         about.setOnClickListener(this);
         settings.setOnClickListener(this);
         exit.setOnClickListener(this);
+        fbLogout.setOnClickListener(this);
         
         Bundle bundle=getIntent().getExtras();
         
@@ -114,11 +126,23 @@ public class Screen5 extends Activity implements OnClickListener {
 		 * I am getting the facebook access token sent in by the
 		 * activity from which the user logs in. I need this
 		 * access token to retrieve the facebook session.
-		 */
+		 */ 
 		
 		String accessToken=bundle.getString("accessToken");
 		facebook=new FacebookConnector();
 		facebook.setAccessToken(accessToken);
+		facebookLogin=bundle.getBoolean("facebookLogin");
+		
+		if(true==facebookLogin)
+		{
+			exit.setVisibility(View.INVISIBLE);
+			fbLogout.setVisibility(View.VISIBLE);
+		}//end if
+		else
+		{
+			exit.setVisibility(View.VISIBLE);
+			fbLogout.setVisibility(View.INVISIBLE);
+		}//end
 			      
                 
     }

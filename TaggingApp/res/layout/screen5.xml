@@ -83,7 +83,13 @@
         android:layout_height="wrap_content"
         android:background="@drawable/exit" />
     
-                
+        <ImageView 
+        android:id="@+id/fbLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/logout" 
+        android:visibility="invisible"
+        />   
         
     </LinearLayout>
     </HorizontalScrollView>

@@ -109,6 +109,4 @@
     </application>
 
     
-    <application android:label="@string/appName"  android:name=".FacebookConnector"/>
-    
 </manifest>

@@ -70,7 +70,7 @@ import com.facebook.android.FacebookError;
  * This class will be used as a wrapper class to the Facebook class.
  */
 
-public class FacebookConnector implements Serializable{
+public class FacebookConnector {
 	
 	/**
 	 * Addition in Version 3.0
@@ -335,10 +335,12 @@ public class FacebookConnector implements Serializable{
 			             * so that it can be used. Developers usually store the access token
 			             * in shared preference, but i do not need to do so, because i am
 			             * getting the latest value of the access token when ever the user logs in.
-			             * 
+			             * I am also saving a flag which will tell whether the user has logged in
+			             * via facebook or not. 
 			             */
 			            
 			            intent.putExtra("accessToken",facebook.getAccessToken());
+			            intent.putExtra("facebookLogin",true);
 			            /**
 			             * Addition in Version 3.0
 			             * Dismiss the progress dialog that was started
