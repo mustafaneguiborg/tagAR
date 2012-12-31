@@ -28,6 +28,9 @@
  */
  
 Current Version of Project Code: 3.0 (Not Stable as the facebook integration features are not yet complete and are under development)
+This branch (facebookFeature) is not an official stable branch. I will be uploading the code that i am working on for facebook integration
+with the app. When the functionality decided for Version 3.0 is complete this branch will be merged with the master branch where the Version 3.0
+will be stable.
 
 To all open source developers out there. We need your help in further developing and improving this application.
 We have published this appplication on to Google Play and you can download it for free from the following link 
