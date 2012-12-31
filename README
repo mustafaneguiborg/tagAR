@@ -27,7 +27,7 @@
  *
  */
  
-Current Version of Project Code: 2.1
+Current Version of Project Code: 3.0 (Not Stable as the facebook integration features are not yet complete and are under development)
 
 To all open source developers out there. We need your help in further developing and improving this application.
 We have published this appplication on to Google Play and you can download it for free from the following link 
@@ -38,12 +38,13 @@ https://play.google.com/store/apps/details?id=com.tagAR
 This application has been tested on the following devices:
 
 Samsung Galaxy Ace GT-S5830 running Android 2.2.1
+Samsung Galaxy Note 2 running Android 4.1.1 (A new device that i have aquired recently)
 
 We need your help in testing this app on the other Android powered devices as well and tell us if it works on them.
 We also need your help in developing fixes if you find any, and to return them to us so that we can incorporate them into the project.
 Mean while we will also be working on improving this app, by adding new features and fixing bugs if we find any.
 
-This is version 0.3 of the application. We will be using the following versioning:
+This is version 3.0 of the application. We will be using the following versioning:
 The major(before the period) is incremented when a new feature is introduced into the app. 
 The minor(after the period) is incremented when a bug is fixed in the app.
 
@@ -173,5 +174,9 @@ The user can enable this feature in the Settings Page.
 Some changes have been made to the server code as well to reflect the change and backward compatibility has been provided to
 allow the apps of older version to function properly.
 	
+	
+Changes from Version 2.1 to Version 3.0
+
+To add content later....	
 	
 	
