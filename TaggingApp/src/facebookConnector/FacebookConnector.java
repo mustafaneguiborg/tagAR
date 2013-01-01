@@ -78,7 +78,7 @@ public class FacebookConnector {
 	 * will be saving the object of FacebookConnector in an intent object
 	 * and will be passing it to the next activity so that it can be used there.
 	 */
-	private String facebookApiKey="463826866994500";
+	private String facebookApiKey="ENTER-YOUR-FACEBOOK-APP-ID";
 	private Facebook facebook;
     private AsyncFacebookRunner mAsyncRunner;
 
