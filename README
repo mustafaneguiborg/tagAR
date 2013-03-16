@@ -27,6 +27,8 @@
  *
  */
  
+Please note: There are two branches, master and development. The master branch contains production ready code, while the development branch contains code which is currently under development and may not be stable at the current time.
+ 
 Current Version of Project Code: 3.0 (Not Stable as the facebook integration features are not yet complete and are under development)
 This branch (facebookFeature) is not an official stable branch. I will be uploading the code that i am working on for facebook integration
 with the app. When the functionality decided for Version 3.0 is complete this branch will be merged with the master branch where the Version 3.0
