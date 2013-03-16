@@ -40,13 +40,9 @@ package com.tagAR;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
@@ -79,9 +75,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.graphics.PixelFormat;
 import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.hardware.Camera;
 import android.hardware.Camera.PictureCallback;
 import android.hardware.Camera.ShutterCallback;
@@ -94,7 +88,6 @@ import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
 import android.util.Base64;
 import android.util.Log;
@@ -340,14 +333,17 @@ public class Screen6 extends Activity implements SensorEventListener,OnTouchList
         linearRefresh.setLayoutParams(new LayoutParams( LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT ));
         linearRefresh.addView(refresh);
         linearRefresh.setGravity(Gravity.LEFT);
-        
+
+        /**
+         * 
+         * Deletion in Version 3.0
+         * I have removed the instruction linearTagIt.setLayoutParams(new LayoutParams( LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT ));
+         * at the bottom as it was redundant;
+         * 
+         */
         linearTagIt.setLayoutParams(new LayoutParams( LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT ));
         linearTagIt.addView(tagit);
         linearTagIt.setGravity(Gravity.RIGHT);
-        
-        linearTagIt.setLayoutParams(new LayoutParams( LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT ));
-               
-        
         
         linearBottom.addView(linearRefresh);
         linearBottom.addView(linearTagIt);
@@ -736,7 +732,7 @@ public class Screen6 extends Activity implements SensorEventListener,OnTouchList
 									                  tag[i].setImage(BitmapFactory.decodeStream(is,null,o));								                  
 									                  
 									             } catch (IOException e) {
-									                  // TODO Auto-generated catch block
+									                 
 									                  e.printStackTrace();
 									             } catch(Exception e)
 									             {
@@ -869,7 +865,8 @@ public class Screen6 extends Activity implements SensorEventListener,OnTouchList
 				//float y=tags.get(0).getY();
 				
 				int i=0;
-				//when ever the device is moved, the difference values of all of the tags are recalculated. It is these difference values which is actually the difference between the actual point of the tag and the x value of the accelerometer. if the 
+				//when ever the device is moved, the difference values of all of the tags are recalculated. It is these difference 
+				//values which is actually the difference between the actual point of the tag and the x value of the accelerometer. if the 
 				//difference is within a certain value then show the tag, else do not show the tag.
 				while(null!=tags && i<tags.size())
 				{
@@ -896,6 +893,10 @@ public class Screen6 extends Activity implements SensorEventListener,OnTouchList
 		 */
 
 		
+		/**
+		 * Bug Discovery in Version 3.0
+		 * I do not know why i am redeclaring xTouch again. I will have to check the whole code to see why this is happening
+		 */
 		xTouch= event.getX();
 		yTouch= event.getY();
 		
@@ -943,7 +944,7 @@ public class Screen6 extends Activity implements SensorEventListener,OnTouchList
 					 */
 					
 					tags.get(i).resetToIdentity();
-					tags.get(i).translation((height/2),-(height/2), 0);
+					tags.get(i).translation((height/2),-(height/2), 0);//bring the tag to the center of the screen
 					tags.get(i).translation((-tags.get(i).getDiffX()*3)+50+spaceBetweenTags,0, 0);
 					tags.get(i).updateXYZ();
 					x1=tags.get(i).getVector()[0];
@@ -1485,7 +1486,6 @@ public class Screen6 extends Activity implements SensorEventListener,OnTouchList
 										                  tag[i].setImage(BitmapFactory.decodeStream(is,null,o));								                  
 										                  
 										             } catch (IOException e) {
-										                  // TODO Auto-generated catch block
 										                  e.printStackTrace();
 										             } catch(Exception e)
 										             {
@@ -2077,7 +2077,7 @@ public class Screen6 extends Activity implements SensorEventListener,OnTouchList
 									                  tag[i].setImage(BitmapFactory.decodeStream(is,null,o));								                  
 									                  
 									             } catch (IOException e) {
-									                  // TODO Auto-generated catch block
+ 
 									                  e.printStackTrace();
 									             } catch(Exception e)
 									             {
@@ -2159,7 +2159,7 @@ public class Screen6 extends Activity implements SensorEventListener,OnTouchList
 
 			 
 			 public void onPictureTaken(byte[] arg0, Camera arg1) {
-			  // TODO Auto-generated method stub
+			 
 			 
 			 }};
 
@@ -2215,25 +2215,33 @@ public class Screen6 extends Activity implements SensorEventListener,OnTouchList
 	    	
 	    	private Matrix matrix = new Matrix();
 	    	private Bitmap tag;
-	    	private Bitmap tagit;
-	    	private Bitmap crossHair;
-	    	private Bitmap refreshButton;
 			private Resources res = this.getResources();
 			private Paint paint=new Paint();
 
 	    	 
 	    	public CustomView(Context context) {
 	    		super(context);
-	    		// TODO Auto-generated constructor stub
+
 	    		//matrix.reset();
+	    		
+	    		/**
+	    		 * 
+	    		 * Deletion in Version 3.0
+	    		 * I have removed the following lines of code
+	    		 * 	tagit = BitmapFactory.decodeResource(res, R.drawable.tagit);
+	    		 * 	crossHair=BitmapFactory.decodeResource(res, R.drawable.crosshair);
+	    		 * 	refreshButton=BitmapFactory.decodeResource(res, R.drawable.refreshbutton);
+	    		 * as they were not needed. I am drawing the buttons in the layout file and not
+	    		 * in the custom view. Only the tags are being drawn in the custom view.
+	    		 * I have also removed their declarations from above.
+	    		 */
 	    		
 	    		paint.setStyle(Paint.Style.FILL);
 	    		paint.setAntiAlias(true);
 	    		paint.setColor(Color.BLACK);
 	    		tag = BitmapFactory.decodeResource(res, R.drawable.tag);
-	    		tagit = BitmapFactory.decodeResource(res, R.drawable.tagit);
-	  			crossHair=BitmapFactory.decodeResource(res, R.drawable.crosshair);
-	  			refreshButton=BitmapFactory.decodeResource(res, R.drawable.refreshbutton);
+	    		
+	    		
 	    	}
 
 	    	
