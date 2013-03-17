@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tagAR"
+    android:versionCode="9"
+    android:versionName="3.0" >
+
+    <uses-sdk android:minSdkVersion="8" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--
+    Addition in Version 3.0
+    I have added the supports-screens tag because without this tag drawables from mdpi were being selected
+    despite of devices of different densities being used
+    -->
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true" />
+
+    <application
+        android:icon="@drawable/iconlauncher"
+        android:label="@string/appName" >
+        <activity
+            android:name="com.tagAR.MNLogo"
+            android:label="@string/appName"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tagAR.MustafaLogo"
+            android:label="@string/appName"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="com.tagAR.MustafaLogo" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tagAR.TagARLogo"
+            android:label="@string/appName"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="com.tagAR.TagARLogo" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tagAR.PreLoginTabs"
+            android:label="@string/appName"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="com.tagAR.PreLoginTabs" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tagAR.Login"
+            android:label="@string/appName"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="com.tagAR.Login" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tagAR.Registration"
+            android:label="@string/appName"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="com.tagAR.Registration" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tagAR.Menu"
+            android:label="@string/appName"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="com.tagAR.Menu" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tagAR.TaggingScreen"
+            android:label="@string/appName"
+            android:screenOrientation="landscape" >
+            <intent-filter>
+                <action android:name="com.tagAR.TaggingScreen" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tagAR.About"
+            android:label="@string/appName"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="com.tagAR.About" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tagAR.ResetPassword"
+            android:label="@string/appName"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="com.tagAR.ResetPassword" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tagAR.Settings"
+            android:label="@string/appName"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="com.tagAR.Settings" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tagAR.LoginAccountsList"
+            android:label="@string/appName"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="com.tagAR.LoginAccountsList" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
