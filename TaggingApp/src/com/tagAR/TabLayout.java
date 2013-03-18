@@ -90,7 +90,11 @@ public class TabLayout extends TabActivity{
 
 	}
 
-
+/**
+ * I am incorporating Option Menus, which will provide more options to
+ * the user in how to interact with the application.
+ * 
+ */
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.menu, menu);
