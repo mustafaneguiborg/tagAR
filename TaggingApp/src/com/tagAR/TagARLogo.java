@@ -83,7 +83,7 @@ public class TagARLogo extends Activity {
                        // do nothing
                    } finally {
                        
-                	   startActivity(new Intent("com.tagAR.PreLoginTabs"));
+                	   startActivity(new Intent("com.tagAR.TabLayout"));
                 	   finish();
                        
                    }

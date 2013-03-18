@@ -127,7 +127,7 @@ public class  Utilities {
 	public static void setSharedPreferencesBoolean(Context context,String key, Boolean value)
 	{ 
 
-		 SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, 0);
+		 SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
 	     SharedPreferences.Editor editor = settings.edit();
 	  	 editor.putBoolean(key, value).commit();
 
@@ -136,7 +136,7 @@ public class  Utilities {
 	public static void setSharedPreferencesLong(Context context,String key, Long value)
 	{ 
 
-		 SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, 0);
+		 SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
 	     SharedPreferences.Editor editor = settings.edit();
 	  	 editor.putLong(key, value).commit();
 

@@ -59,6 +59,7 @@
 	<string name="latestNews">Latest News</string>
 	<string name="latestNews1">None at the moment.</string>
 	<string name="showTips">Show textual tips?</string>
+	<string name="description">tagAR (pronounced as "tag" as in the word tag and AR as "ai" and "are". The letters AR are to be pronounced the way the letters A and R are pronounced.) is an augmented reality tagging application developed for the Android Operating System (at the moment). To make things better, we have decided to release this app as an Open Source app under the GNU GENERAL PUBLIC LICENSE Version 3. tagAR allows you to tag locations in real time and at the same time see tags posted by other users. This app encourages social networking between users from all walks of life. They can tag their favorite locations and post a comment about the location. Then anyone near that tag can see it in the screen of their mobile device.</string>
 	
 	
 </resources>	

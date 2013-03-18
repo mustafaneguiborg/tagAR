@@ -47,15 +47,24 @@ import java.util.ArrayList;
 import com.tagAR.R;
 
 import android.app.Activity;
+import android.app.ListActivity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 
 
-public class About extends Activity{
+public class About extends ListActivity{
 
 	
     private  ArrayList<String>userData;
@@ -68,42 +77,70 @@ public class About extends Activity{
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
         WindowManager.LayoutParams.FLAG_FULLSCREEN);
         
-        setContentView(R.layout.about);
-       
-        Bundle bundle=getIntent().getExtras();
+        //setContentView(R.layout.about);
         
-        userData=bundle.getStringArrayList("userData");
+        /**
+         * 
+         * source for setting up a basic list view
+         * http://www.mkyong.com/android/android-listview-example/
+         * 
+         */
+        
+        ArrayList<String> listItems=new ArrayList<String>();
+        listItems.add(this.getString(R.string.description));
+        listItems.add(this.getString(R.string.company));
+        listItems.add(this.getString(R.string.designerDeveloper));
+        listItems.add(this.getString(R.string.license));
+        listItems.add(this.getString(R.string.website));
+        listItems.add(this.getString(R.string.website1));
+        listItems.add(this.getString(R.string.appVersion));
+        listItems.add(this.getString(R.string.copyright1));
+        listItems.add(this.getString(R.string.copyright2));
+
+        ArrayAdapter<String> adapter;
+        
+        adapter=new ArrayAdapter<String>(this,R.layout.about,listItems);
+        setListAdapter(adapter);
+
+        ListView listView = getListView();
+		listView.setTextFilterEnabled(true);
+ 
+		listView.setOnItemClickListener(new OnItemClickListener() {
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+			    // When clicked, show a toast with the TextView text
+			    //Toast.makeText(getApplicationContext(),((TextView) view).getText(), Toast.LENGTH_SHORT).show();
+				
+				/**
+				 * 
+				 * source for opening a web link using intent
+				 * http://stackoverflow.com/questions/3004515/android-sending-an-intent-to-browser-to-open-specific-url
+				 * 
+				 */
+				
+			    if(4==id)
+			    {
+			    	
+			    	Intent intent = new Intent(Intent.ACTION_VIEW,Uri.parse("http://tagar.mntechsolutions.net"));
+			    	startActivity(intent);
+			    	
+			    }//end if
+			    else if(5==id)
+			    {
+			    	Intent intent = new Intent(Intent.ACTION_VIEW,Uri.parse("http://github.com/mustafaneguib/tagAR"));
+			    	startActivity(intent);
+			    	
+			    }//end else if
+			    else
+			    {
+			    	
+			    }//end else
+			    	
+			}
+		});
+        
     }
 
 	
-	/**********onKeyDown function*********/
-	public boolean onKeyDown(int keyCode, KeyEvent event)
-	{//this function will work with all the Android versions 
-		//i am overriding the back button and the home button
-
-
-
 	
-		if (keyCode == KeyEvent.KEYCODE_BACK) 
-		{
-
-
-			Intent intent =new Intent("com.tagAR.Menu");
-			intent.putStringArrayListExtra("userData", userData);
-			startActivity(intent);                                              
-			finish();
-
-		}//end if
-		else if(keyCode==KeyEvent.KEYCODE_MENU)
-		{
-			
-
-			
-		}//end else if
-
-
-		return super.onKeyDown(keyCode, event);
-	}
-	
-
 }

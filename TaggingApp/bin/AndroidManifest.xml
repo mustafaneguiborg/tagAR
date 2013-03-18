@@ -57,11 +57,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.tagAR.PreLoginTabs"
+            android:name="com.tagAR.TabLayout"
             android:label="@string/appName"
             android:screenOrientation="portrait" >
             <intent-filter>
-                <action android:name="com.tagAR.PreLoginTabs" />
+                <action android:name="com.tagAR.TabLayout" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
@@ -87,7 +87,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.tagAR.Menu"
+            android:name="com.tagAR.Menu1"
             android:label="@string/appName"
             android:screenOrientation="portrait" >
             <intent-filter>

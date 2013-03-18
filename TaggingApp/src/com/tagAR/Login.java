@@ -252,8 +252,14 @@ public class Login extends Activity implements OnClickListener{
 			if(true==result)
 			{//the operation is a success
 				progressDialog.dismiss();
-				Intent intent=new Intent("com.tagAR.Menu");
+				Intent intent=new Intent("com.tagAR.TabLayout");
 				intent.putStringArrayListExtra("userData",userData);
+				Utilities.setSharedPreferencesBoolean(context, "loggedIn",true);
+				Utilities.setSharedPreferencesString(context, "userId",userData.get(0));
+				Utilities.setSharedPreferencesString(context, "email",userData.get(1));
+				Utilities.setSharedPreferencesString(context, "firstName",userData.get(2));
+				Utilities.setSharedPreferencesString(context, "lastName",userData.get(3));
+				Utilities.setSharedPreferencesString(context, "password", new String(Base64.decode(passwordText.toString(),Base64.DEFAULT)));
 				startActivity(intent);
 				finish();
 			}//end if
